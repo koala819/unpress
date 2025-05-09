@@ -5,7 +5,11 @@
       :value="page"
       class="content-grid"
     />
-    <!-- <ContentRenderer :key="page._id" :value="page" class="content-grid" /> -->
+    <!-- <ContentRenderer
+      :key="page._id"
+      :value="page"
+      class="content-grid"
+    /> -->
   </NuxtLayout>
 </template>
 
