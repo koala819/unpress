@@ -1,0 +1,15 @@
+@unocss;
+
+/* .app__header {
+  background-color: transparent !important;
+  border: none !important;
+  color: white !important;
+} */
+.bg-funky {
+  position: relative;
+}
+.bg-funky:before {
+  --at-apply: absolute inset-0 rounded-inherit content-[''];
+  --at-apply: origin-bottom-left rotate--1 translate-x--1 translate-y--2 -z-1;
+  --at-apply: bg-gradient-to-br from-primary to-primary/50;
+}
