@@ -11,7 +11,8 @@ const customDefu = createDefu((obj, key, value) => {
 const defaultConfig: DefaultConfig = {
   site: {
     name: 'shadcn-docs',
-    description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+    description:
+      'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
     ogImage: '/hero.png',
     ogImageComponent: 'ShadcnDocs',
     ogImageColor: 'light',
@@ -165,55 +166,53 @@ export function useConfig() {
   const { navigation, page } = useContent()
   const route = useRoute()
 
-  return computed(
-    () => {
-      const processedConfig = customDefu(appConfig.value, defaultConfig)
-      const header = processedConfig.header
-      const banner = processedConfig.banner
-      const main = processedConfig.main
-      const aside = processedConfig.aside
-      const sidebarRight = processedConfig.sidebarRight
-      const toc = processedConfig.toc
-      const footer = processedConfig.footer
+  return computed(() => {
+    const processedConfig = customDefu(appConfig.value, defaultConfig)
+    const header = processedConfig.header
+    const banner = processedConfig.banner
+    const main = processedConfig.main
+    const aside = processedConfig.aside
+    const sidebarRight = processedConfig.sidebarRight
+    const toc = processedConfig.toc
+    const footer = processedConfig.footer
 
-      return {
-        ...processedConfig,
-        header: {
-          ...header,
-          ...navKeyFromPath(route.path, 'header', navigation.value || []),
-          ...page.value?.header,
-        } as (typeof header & DefaultConfig['header']),
-        banner: {
-          ...banner,
-          ...navKeyFromPath(route.path, 'banner', navigation.value || []),
-          ...page.value?.banner,
-        } as (typeof banner & DefaultConfig['banner']),
-        main: {
-          ...main,
-          ...navKeyFromPath(route.path, 'main', navigation.value || []),
-          ...page.value?.main,
-        } as (typeof main & DefaultConfig['main']),
-        aside: {
-          ...aside,
-          ...navKeyFromPath(route.path, 'aside', navigation.value || []),
-          ...page.value?.aside,
-        } as (typeof aside & DefaultConfig['aside']),
-        sidebarRight: {
-          ...sidebarRight,
-          ...navKeyFromPath(route.path, 'sidebarRight', navigation.value || []),
-          ...page.value?.sidebarRight,
-        } as (typeof toc & DefaultConfig['sidebarRight']),
-        toc: {
-          ...toc,
-          ...navKeyFromPath(route.path, 'toc', navigation.value || []),
-          ...page.value?.toc,
-        } as (typeof toc & DefaultConfig['toc']),
-        footer: {
-          ...footer,
-          ...navKeyFromPath(route.path, 'footer', navigation.value || []),
-          ...page.value?.footer,
-        } as (typeof footer & DefaultConfig['footer']),
-      }
-    },
-  )
+    return {
+      ...processedConfig,
+      header: {
+        ...header,
+        ...navKeyFromPath(route.path, 'header', navigation.value || []),
+        ...page.value?.header,
+      } as typeof header & DefaultConfig['header'],
+      banner: {
+        ...banner,
+        ...navKeyFromPath(route.path, 'banner', navigation.value || []),
+        ...page.value?.banner,
+      } as typeof banner & DefaultConfig['banner'],
+      main: {
+        ...main,
+        ...navKeyFromPath(route.path, 'main', navigation.value || []),
+        ...page.value?.main,
+      } as typeof main & DefaultConfig['main'],
+      aside: {
+        ...aside,
+        ...navKeyFromPath(route.path, 'aside', navigation.value || []),
+        ...page.value?.aside,
+      } as typeof aside & DefaultConfig['aside'],
+      sidebarRight: {
+        ...sidebarRight,
+        ...navKeyFromPath(route.path, 'sidebarRight', navigation.value || []),
+        ...page.value?.sidebarRight,
+      } as typeof toc & DefaultConfig['sidebarRight'],
+      toc: {
+        ...toc,
+        ...navKeyFromPath(route.path, 'toc', navigation.value || []),
+        ...page.value?.toc,
+      } as typeof toc & DefaultConfig['toc'],
+      footer: {
+        ...footer,
+        ...navKeyFromPath(route.path, 'footer', navigation.value || []),
+        ...page.value?.footer,
+      } as typeof footer & DefaultConfig['footer'],
+    }
+  })
 }

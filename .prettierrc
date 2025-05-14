@@ -12,5 +12,6 @@
   "htmlWhitespaceSensitivity": "strict",
   "vueIndentScriptAndStyle": false,
   "bracketSameLine": false,
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "quoteProps": "preserve"
 }

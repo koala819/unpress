@@ -34,54 +34,68 @@ export default defineAppConfig({
       },
       // class: 'fixed',
       darkModeToggle: true,
-      nav: [{
-        title: 'Docs',
-        links: [{
-          title: 'Getting Started',
-          to: '/getting-started',
-          description: 'Start building your document with shadcn-docs-nuxt',
-          icon: 'lucide:rocket',
-        }, {
-          title: 'Development',
-          to: '/development',
-          description: 'Discover the configurations and exposed APIs.',
+      nav: [
+        {
+          title: 'Docs',
+          links: [
+            {
+              title: 'Getting Started',
+              to: '/getting-started',
+              description: 'Start building your document with shadcn-docs-nuxt',
+              icon: 'lucide:rocket',
+            },
+            {
+              title: 'Development',
+              to: '/development',
+              description: 'Discover the configurations and exposed APIs.',
+              target: '_self',
+              icon: 'lucide:code',
+            },
+          ],
+        },
+        {
+          title: 'Credits',
+          links: [
+            {
+              title: 'shadcn-ui',
+              to: 'https://ui.shadcn.com/',
+              description: 'For the beautiful component design & docs design',
+              target: '_blank',
+            },
+            {
+              title: 'shadcn-vue',
+              to: 'https://www.shadcn-vue.com/',
+              description: 'For the vue port of shadcn-ui & some docs component source',
+              target: '_blank',
+            },
+            {
+              title: 'Docus',
+              to: 'https://docus.dev/',
+              description: 'For inspiration & some docs component source',
+              target: '_blank',
+            },
+            {
+              title: 'Nuxt Content',
+              to: 'https://content.nuxt.com/',
+              description: 'Content made easy for Vue Developers',
+              target: '_blank',
+            },
+          ],
+        },
+        {
+          title: 'Use This Template',
+          to: '/getting-started/introduction',
           target: '_self',
-          icon: 'lucide:code',
-        }],
-      }, {
-        title: 'Credits',
-        links: [{
-          title: 'shadcn-ui',
-          to: 'https://ui.shadcn.com/',
-          description: 'For the beautiful component design & docs design',
+          showLinkIcon: true,
+        },
+      ],
+      links: [
+        {
+          icon: 'lucide:twitter',
+          to: 'https://x.com/unpress_dev',
           target: '_blank',
-        }, {
-          title: 'shadcn-vue',
-          to: 'https://www.shadcn-vue.com/',
-          description: 'For the vue port of shadcn-ui & some docs component source',
-          target: '_blank',
-        }, {
-          title: 'Docus',
-          to: 'https://docus.dev/',
-          description: 'For inspiration & some docs component source',
-          target: '_blank',
-        }, {
-          title: 'Nuxt Content',
-          to: 'https://content.nuxt.com/',
-          description: 'Content made easy for Vue Developers',
-          target: '_blank',
-        }],
-      }, {
-        title: 'Use This Template',
-        to: '/getting-started/introduction',
-        target: '_self',
-        showLinkIcon: true,
-      }],
-      links: [{
-        icon: 'lucide:twitter',
-        to: 'https://x.com/unpress_dev',
-        target: '_blank',
-      }],
+        },
+      ],
     },
     aside: {
       useLevel: true,
@@ -148,7 +162,8 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Made with ❤️ by [**Emmanuel Salomon**](https://github.com/ManUtopiK/) with [Unpress](https://unpress.dev)',
+      credits:
+        'Made with ❤️ by [**Emmanuel Salomon**](https://github.com/ManUtopiK/) with [Unpress](https://unpress.dev)',
       links: [
         {
           title: 'shadcn-vue',
@@ -166,19 +181,22 @@ export default defineAppConfig({
     toc: {
       enable: true,
       title: 'On This Page',
-      links: [{
-        title: 'Star on GitHub',
-        icon: 'lucide:star',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-        target: '_blank',
-        showLinkIcon: true,
-      }, {
-        title: 'Create Issues',
-        icon: 'lucide:circle-dot',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
-        target: '_blank',
-        showLinkIcon: true,
-      }],
+      links: [
+        {
+          title: 'Star on GitHub',
+          icon: 'lucide:star',
+          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          target: '_blank',
+          showLinkIcon: true,
+        },
+        {
+          title: 'Create Issues',
+          icon: 'lucide:circle-dot',
+          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+          target: '_blank',
+          showLinkIcon: true,
+        },
+      ],
       carbonAds: {
         enable: true,
         disableInDev: true,
